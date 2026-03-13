@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 14 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 74%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 14 100% 50%;
+    --radius: 1rem;
+    --font-display: "Anton", sans-serif;
+    --font-body: "Inter", sans-serif;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .header {
+    @apply fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-5 text-sm uppercase tracking-[0.18em] sm:px-10 lg:px-16;
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.92), rgba(5, 5, 5, 0.1));
+    backdrop-filter: blur(10px);
+  }
+
+  .logo {
+    @apply font-semibold;
+  }
+
+  .nav {
+    @apply hidden items-center gap-10 md:flex;
+  }
+
+  .nav a {
+    @apply transition-opacity duration-300 hover:opacity-60;
+  }
+
+  .hire-me {
+    @apply inline-flex items-center gap-3 font-semibold;
+  }
+
+  .icon-arrow {
+    @apply flex h-9 w-9 items-center justify-center rounded-full border border-foreground transition-colors duration-300;
+  }
+
+  .icon-arrow svg {
+    @apply h-4 w-4;
+  }
+
+  .hire-me:hover .icon-arrow {
+    @apply bg-foreground text-background;
+  }
+
+  .site-wrapper {
+    @apply relative flex min-h-screen flex-col justify-between px-4 pb-8 pt-28 sm:px-8 sm:pb-10 lg:px-12;
+  }
+
+  .hero-panel {
+    min-height: 100vh;
+  }
+
+  .bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-display);
+    font-size: clamp(4.5rem, 11vw, 15rem);
+    line-height: 0.92;
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  .text-orange {
+    color: hsl(var(--primary));
+  }
+
+  .model-container {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .model-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at center, transparent 0 28%, rgba(5, 5, 5, 0.34) 55%, rgba(5, 5, 5, 0.88) 100%);
+    pointer-events: none;
+  }
+
+  spline-viewer {
+    width: 100%;
+    height: 100%;
+  }
+
+  .main-content {
+    @apply relative z-10 flex-1;
+  }
+
+  .side-text {
+    position: absolute;
+    top: 50%;
+    max-width: 320px;
+    transform: translateY(-50%);
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 1), 0 0 10px rgba(0, 0, 0, 0.85);
+  }
+
+  .left-text {
+    @apply left-0 text-sm leading-7 sm:left-2;
+  }
+
+  .left-text .sub {
+    @apply mt-4 text-xs tracking-[0.08em] text-muted-foreground;
+  }
+
+  .right-text {
+    @apply right-0 text-right text-base font-medium tracking-[0.12em] sm:right-2;
+  }
+
+  .footer {
+    @apply relative z-10 pt-10;
+  }
+
+  .brands {
+    @apply flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-center text-[1.7rem] uppercase tracking-[0.2em] opacity-80 sm:justify-between sm:text-[2.3rem];
+    font-family: var(--font-display);
+  }
+}
+
+@media (max-width: 1024px) {
+  .bg-text {
+    font-size: clamp(4rem, 14vw, 10rem);
+    white-space: normal;
+  }
+}
+
+@media (max-width: 768px) {
+  .side-text {
+    display: none;
+  }
+
+  .site-wrapper {
+    min-height: 100svh;
+  }
+}
