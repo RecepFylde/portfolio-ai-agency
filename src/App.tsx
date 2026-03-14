@@ -91,7 +91,7 @@ function App() {
             DESIGN
           </div>
 
-          <div className="model-container" aria-hidden="true">
+          <div className="model-container">
             <spline-viewer url="https://prod.spline.design/CgrQdsFsWsfVZNmC/scene.splinecode" loading-anim="false"></spline-viewer>
           </div>
 

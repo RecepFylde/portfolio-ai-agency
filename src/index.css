@@ -121,7 +121,8 @@
   .model-container {
     position: absolute;
     inset: 0;
-    z-index: 1;
+    z-index: 5;
+    pointer-events: auto;
   }
 
   .model-container::after {
@@ -136,10 +137,13 @@
   spline-viewer {
     width: 100%;
     height: 100%;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
   }
 
   .main-content {
-    @apply relative z-10 flex-1;
+    @apply relative z-10 flex-1 pointer-events-none;
   }
 
   .side-text {
