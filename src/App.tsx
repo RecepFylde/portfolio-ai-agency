@@ -92,7 +92,7 @@ function App() {
           </div>
 
           <div className="model-container" aria-hidden="true">
-            <spline-viewer url="https://prod.spline.design/ElxJddWz4JGRR5jD/scene.splinecode" loading-anim="false"></spline-viewer>
+            <spline-viewer url="https://prod.spline.design/CgrQdsFsWsfVZNmC/scene.splinecode" loading-anim="false"></spline-viewer>
           </div>
 
           <div className="main-content">
