@@ -1,4 +1,4 @@
-import { Mail, MoveDownRight, MailIcon, PhoneIcon, MapPinIcon } from "lucide-react";
+import { MoveDownRight, MailIcon, MapPinIcon } from "lucide-react";
 import { StaggerTestimonials } from "@/components/ui/stagger-testimonials";
 import { ContactCard } from "@/components/ui/contact-card";
 import { Input } from "@/components/ui/input";
@@ -162,17 +162,12 @@ function App() {
                 {
                   icon: MailIcon,
                   label: "Email",
-                  value: "hello@recephaylu.com",
-                },
-                {
-                  icon: PhoneIcon,
-                  label: "Phone",
-                  value: "+1 (555) 123-4567",
+                  value: "recephaylu@gmail.com",
                 },
                 {
                   icon: MapPinIcon,
                   label: "Location",
-                  value: "Available for remote work",
+                  value: "Blackpool/UK",
                   className: "col-span-2 md:col-span-1",
                 },
               ]}
