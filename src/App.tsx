@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 
-const brands = ["OPENAI", "TENSORFLOW", "PYTORCH", "FLUTTER", "REACT"];
+const brands = ["OPENAI", "antigravity", "claude", "FLUTTER", "REACT"];
 
 function App() {
   const [formData, setFormData] = useState({
